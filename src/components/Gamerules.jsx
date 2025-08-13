@@ -11,13 +11,12 @@ const Gamerules = () => {
             <div className=' flex justify-between items-center text-white m-4'><span className='font-semibold font-sans'>GAME RULES</span>
                 <span onClick={() => dispatch(SetGamerulesSelector(false))} className='rounded-full cursor-pointer flex bg-[#373E48] p-0.5 inset-shadow-[0.4px_0.4px_0.8px_white]'><RxCross1 className='p-0.5' /></span></div>
             <div className='w-full h-px bg-[#38393C]'></div>
-            <h1 className='font-semibold mt-4 text-2xl text-center text-white'>MINES</h1>
+            <h1 className='font-semibold mt-4 text-2xl text-center text-white'>HOTLINE</h1>
 
             <ul className='text-[#9B9B9B] w-[88%] mx-auto mt-3 flex flex-col gap-y-2'>
-                <li>- A goal of the game is to reveal stars and avoid mines. With each revealed star, payout multiplier increases. Tiles can be revealed by selecting certain tile or clicking “pick randomply” button; </li>
-                <li>- Player can cash out winnings at any time by clicking “Cash out” button; </li>
-                <li>- Number of mines per field can be adjusted from dropdown. This affects game odds and bet multiplier; </li>
-                <li>- The maximum winning odds for this game are 5044291X. However, the maximum win is limited by the operator and can be accessed from the “Game Limits” section in the menu. </li>
+                <li>- In Hotline, player can bet on Red, Black or Hot segment of the line. He wins if he guesses outcome; </li>
+                <li>- Player can increase overall multipliers and game risk by activating “High risk mode”; </li>
+                <li>- Outcomes of previous rounds are appearing in the “Last results” section. </li>
             </ul>
             <div className='w-[96%] mx-auto my-4 h-px bg-[#38393C]'></div>
 
@@ -36,15 +35,14 @@ const Gamerules = () => {
             <h1 className='ml-6 text-white'>AUTO GAME</h1>
             <ul className='text-[#9B9B9B] w-[88%] mx-auto mt-3 flex flex-col gap-y-2'>
                 <h6 className='mb-2'> Note: this feature might be unavailable in some casinos. </h6>
-                    <li>- Auto Play is activated by pressing the “Auto Game” button. To continue tiles on the board should be selected; </li>
-                    <li>- Auto play settings are activated by pressing “Auto Play” button, if tiles are selected on the board; </li>
-                    <li>- In the Auto Play panel, the “Stop if cash decreases by” option stops Auto Play, if the balance is decreased by the selected amount. </li>
-                    <li>- In the Auto Play panel, the “Stop if single win exceeds” option stops Auto Play, if a single win exceeds the selected amount. </li>
-                    <li>- In the Auto Play panel, the “Stop if cash increases by” option stops Auto Play, if the balance is increased by the selected amount. </li>
-                    <li>- After start, remaining number of rounds is displayed on the counter. The player can stop Auto Play at any time, by clicking the counter. </li>
-                </ul>
+                <li>- Auto Play is activated by pressing the “Auto Game” button.</li>
+                <li>- In the Auto Play panel, the “Stop if cash decreases by” option stops Auto Play, if the balance is decreased by the selected amount. </li>
+                <li>- In the Auto Play panel, the “Stop if single win exceeds” option stops Auto Play, if a single win exceeds the selected amount. </li>
+                <li>- In the Auto Play panel, the “Stop if cash increases by” option stops Auto Play, if the balance is increased by the selected amount. </li>
+                <li>- After start, remaining number of rounds is displayed on the counter. The player can stop Auto Play at any time, by clicking the counter. </li>
+            </ul>
 
-                  <div className='w-[96%] mx-auto my-4 h-px bg-[#38393C]'></div>
+            <div className='w-[96%] mx-auto my-4 h-px bg-[#38393C]'></div>
             <h1 className='ml-6 text-white'>ADDITIONAL INFORMATION</h1>
             <ul className='text-[#9B9B9B] w-[88%] mx-auto mt-3 mb-5 flex flex-col gap-y-2'>
                 <li>- In the event of a malfunction of the gaming hardware/software, all affected game bets and payouts are rendered void and all affected bets are refunded. </li>

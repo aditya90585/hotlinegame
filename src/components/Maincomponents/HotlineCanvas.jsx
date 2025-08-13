@@ -162,7 +162,7 @@ export default function HotlineDOMTailwind() {
   // Start spin
   const startSpin = () => {
 
-    if (spinselectorref.current==false) return;
+    if (spinselectorref.current == false) return;
     // choose random start in strip
     // positionRef.current = Math.random() * stripWidth;
     positionRef.current = 0
@@ -183,7 +183,7 @@ export default function HotlineDOMTailwind() {
         }, 500);
       } else {
         if (StartAutoGameSelector) {
-              startSpin()
+          startSpin()
         } else {
           startSpin()
         }
@@ -249,10 +249,9 @@ export default function HotlineDOMTailwind() {
             return (
               <div
                 key={c.key + "-" + i}
-                className="flex-shrink-0 rounded-md border-5 flex items-center justify-center text-white font-semibold select-none"
+                className="flex-shrink-0 md:h-[120px] h-[90px] rounded-md border-5 flex items-center justify-center text-white font-semibold select-none"
                 style={{
                   width: cardWidth,
-                  height: 120,
                   marginRight: SPACING,
                   background: bg,
                   borderColor: border,
