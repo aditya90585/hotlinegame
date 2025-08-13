@@ -27,6 +27,7 @@ const Footer = () => {
     const spinselector = useSelector(state => state.spinstate)
     const spinselectorref = useRef(spinselector)
     const selectedCard = useSelector(state => state.selectedCard)
+     const RiskModeselector = useSelector(state => state.Riskmode)
 
     useEffect(() => {
         spinselectorref.current = spinselector
@@ -127,19 +128,19 @@ const Footer = () => {
                                 <div className='w-1/10 h-full flex justify-center items-center ml-1'>
                                     <span className={`${(selectedCard == "red") ? "bg-[#5BA100]" : "bg-[#6C6E71]"}  size-3 rounded-full flex`}></span>
                                 </div>
-                                <div className='w-9/10 flex justify-center items-center text-white mr-2'>Red X2</div>
+                                <div className='w-9/10 flex justify-center items-center text-white mr-2'>Red X{RiskModeselector?4:2}</div>
                             </div>
                             <div onClick={() => dispatch(SetselectedCard("black"))} className={` ${(selectedCard == "black") ? "bg-[#555961]" : "bg-[#393B3F]"} cursor-pointer w-[48%] h-[40%] rounded-sm flex justify-between items-center`}>
                                 <div className='w-1/10 h-full flex justify-center items-center ml-1'>
                                     <span className={`${(selectedCard == "black") ? "bg-[#5BA100]" : "bg-[#6C6E71]"}  size-3 rounded-full flex`}></span>
                                 </div>
-                                <div className='w-9/10 flex justify-center items-center text-white mr-2'>Black X2</div>
+                                <div className='w-9/10 flex justify-center items-center text-white mr-2'>Black X{RiskModeselector?4:2}</div>
                             </div>
                             <div onClick={() => dispatch(SetselectedCard("fire"))} className={` ${(selectedCard == "fire") ? "bg-[#555961]" : "bg-[#393B3F]"} cursor-pointer w-[98%] h-[40%] rounded-sm flex justify-between items-center`}>
                                 <div className='w-1/10 h-full flex justify-center items-center ml-1'>
                                     <span className={`${(selectedCard == "fire") ? "bg-[#5BA100]" : "bg-[#6C6E71]"}  size-3 rounded-full flex`}></span>
                                 </div>
-                                <div className='w-9/10 flex justify-center items-center text-white mr-2'>Hot X16</div>
+                                <div className='w-9/10 flex justify-center items-center text-white mr-2'>Hot X{RiskModeselector?32:16}</div>
                             </div>
 
                         </div>
