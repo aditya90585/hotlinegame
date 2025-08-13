@@ -185,11 +185,9 @@ export default function HotlineDOMTailwind() {
         }, 500);
       } else {
         if (StartAutoGameSelector) {
-          console.log("running3")
               startSpin()
         } else {
           startSpin()
-          console.log("running4")
         }
 
       }
