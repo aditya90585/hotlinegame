@@ -176,9 +176,7 @@ export default function HotlineDOMTailwind() {
   };
 
   useEffect(() => {
-    console.log("running1")
     if (spinselectorref.current === true) {
-      console.log("running2")
       if (RiskModeselector === false) {
         setTimeout(() => {
           startSpin()
@@ -277,7 +275,7 @@ export default function HotlineDOMTailwind() {
       </div>
 
       {/* controls */}
-      <div className="flex items-center gap-3">
+      {/* <div className="flex items-center gap-3">
         <button
           onClick={startSpin}
           className="px-6 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-md shadow"
@@ -293,7 +291,7 @@ export default function HotlineDOMTailwind() {
         <div className="text-sm text-slate-400">
           {isSpinning ? "Spinning..." : result ? `Result: ${result.toUpperCase()}` : "Ready"}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
