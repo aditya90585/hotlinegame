@@ -228,8 +228,8 @@ export default function HotlineDOMTailwind() {
         <div className="flex flex-col items-center gap-4 p-4">
             <div
                 ref={containerRef}
-                className="relative overflow-hidden rounded-lg"
-                style={{ width: "90vw", maxWidth: 930, height: 120 }}
+                className="relative overflow-hidden rounded-lg md:h-[120px] h-[90px]"
+                style={{ width: "90vw", maxWidth: 930}}
             >
                 {/* strip */}
                 <div
