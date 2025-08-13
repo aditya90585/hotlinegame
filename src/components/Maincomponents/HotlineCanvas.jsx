@@ -277,7 +277,7 @@ export default function HotlineDOMTailwind() {
       </div>
 
       {/* controls */}
-      {/* <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3">
         <button
           onClick={startSpin}
           className="px-6 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-md shadow"
@@ -285,7 +285,7 @@ export default function HotlineDOMTailwind() {
           Spin
         </button>
         <button
-          onClick={stopNow}
+          
           className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-md"
         >
           Stop (test)
@@ -293,7 +293,7 @@ export default function HotlineDOMTailwind() {
         <div className="text-sm text-slate-400">
           {isSpinning ? "Spinning..." : result ? `Result: ${result.toUpperCase()}` : "Ready"}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
