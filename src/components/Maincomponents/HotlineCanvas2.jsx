@@ -165,7 +165,7 @@ export default function HotlineDOMTailwind() {
     // Start spin
     const startSpin = () => {
 
-        if (isSpinning) return;
+        if (spinselectorref.current == false) return;
         // choose random start in strip
         // positionRef.current = Math.random() * stripWidth;
         positionRef.current = 0
