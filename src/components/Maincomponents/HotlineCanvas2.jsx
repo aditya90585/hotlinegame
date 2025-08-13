@@ -34,46 +34,50 @@ export default function HotlineDOMTailwind() {
 
     const cashOut = (finalResult) => {
         if (RiskModeselector === true) {
-            if ((finalResult == result1stateref.current) && (finalResult == selectedCardref.current)) {
+            setTimeout(() => {
 
-                dispatch(togglehowtoplay(false))
-                dispatch(toggleMenu(false))
-                let currentmultiplier
-                if (finalResult == "fire") {
-                    currentmultiplier = 32
-                } else {
-                    currentmultiplier = 4
+
+                if ((finalResult == result1stateref.current) && (finalResult == selectedCardref.current)) {
+
+                    dispatch(togglehowtoplay(false))
+                    dispatch(toggleMenu(false))
+                    let currentmultiplier
+                    if (finalResult == "fire") {
+                        currentmultiplier = 32
+                    } else {
+                        currentmultiplier = 4
+                    }
+                    const payout = parseFloat(betamount) * currentmultiplier;
+                    if (payout > 0) {
+
+
+                        dispatch(cashOutbetamount(payout))
+                        dispatch(togglefooter(false));
+                        dispatch(togglemain(true));
+                        dispatch(setCashoutNotification(payout))
+                        dispatch(Setspinstate(false))
+
+
+                        let minestapsound = "/sounds/success-alert.mp3"
+                        let audio = new Audio(minestapsound)
+                        if (soundSelector) {
+                            audio.play()
+                        }
+                        setTimeout(() => {
+                            dispatch(clearCashoutNotification())
+                        }, 2000);
+
+                    }
                 }
-                const payout = parseFloat(betamount) * currentmultiplier;
-                if (payout > 0) {
-
-
-                    dispatch(cashOutbetamount(payout))
-                    dispatch(togglefooter(false));
-                    dispatch(togglemain(true));
-                    dispatch(setCashoutNotification(payout))
+                else {
                     dispatch(Setspinstate(false))
-
-
-                    let minestapsound = "/sounds/success-alert.mp3"
+                    let minestapsound = "/sounds/lose.mp3"
                     let audio = new Audio(minestapsound)
                     if (soundSelector) {
                         audio.play()
                     }
-                    setTimeout(() => {
-                        dispatch(clearCashoutNotification())
-                    }, 2000);
-
                 }
-            }
-            else {
-                dispatch(Setspinstate(false))
-                let minestapsound = "/sounds/lose.mp3"
-                let audio = new Audio(minestapsound)
-                if (soundSelector) {
-                    audio.play()
-                }
-            }
+            }, 300);
         }
     }
 
@@ -296,7 +300,7 @@ export default function HotlineDOMTailwind() {
                     Stop (test)
                 </button>
                 <div className="text-sm text-slate-400">
-                    {isSpinning ? "Spinning..." : result ? `Result: ${result.toUpperCase()}` : "Ready"}
+                    {isSpinning ? "Spinning..." : result ? `Result: ${result.toUpperCase()} ${result1stateref.current}` : "Ready"}
                 </div>
             </div>
         </div>
