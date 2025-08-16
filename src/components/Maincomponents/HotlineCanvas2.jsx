@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Setresult2state, Setspinstate, togglehowtoplay, toggleMenu, setCashoutNotification, clearCashoutNotification, betAmt, togglemain, togglefooter, setcashOutamount, cashOutbetamount } from "../../features/GameSlices";
+import { Setresult2state, Setspinstate, togglehowtoplay, toggleMenu, setCashoutNotification, clearCashoutNotification, betAmt, togglemain, togglefooter, setcashOutamount, cashOutbetamount, Setresult1state } from "../../features/GameSlices";
 
 
 export default function HotlineDOMTailwind() {
@@ -158,7 +158,7 @@ export default function HotlineDOMTailwind() {
             const idxOriginal = ((k % cards.length) + cards.length) % cards.length;
             const finalResult = cards[idxOriginal];
             setResult(finalResult);
-
+            dispatch(Setresult2state(finalResult))
             cashOut(finalResult)
         }
     };
@@ -173,6 +173,8 @@ export default function HotlineDOMTailwind() {
         // choose random initial speed (for variety)
         speedRef.current = 55 + Math.random() * 40; // px per frame approx
         setResult(null);
+      
+        dispatch(Setresult2state(null))
         setIsSpinning(true);
         rafRef.current = requestAnimationFrame(animate);
     };
@@ -229,7 +231,7 @@ export default function HotlineDOMTailwind() {
             <div
                 ref={containerRef}
                 className="relative overflow-hidden rounded-lg md:h-[120px] h-[90px]"
-                style={{ width: "90vw", maxWidth: 930}}
+                style={{ width: "90vw", maxWidth: 930 }}
             >
                 {/* strip */}
                 <div

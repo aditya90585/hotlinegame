@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Setresult1state, Setspinstate, togglehowtoplay, toggleMenu, setCashoutNotification, clearCashoutNotification, betAmt, togglemain, togglefooter, setcashOutamount, cashOutbetamount } from "../../features/GameSlices";
+import { Setresult1state, Setspinstate, togglehowtoplay, toggleMenu, setCashoutNotification, clearCashoutNotification, betAmt, togglemain, togglefooter, setcashOutamount, cashOutbetamount, SetgameHistoryarray } from "../../features/GameSlices";
 
 
 export default function HotlineDOMTailwind() {
@@ -24,7 +24,6 @@ export default function HotlineDOMTailwind() {
   const cashOut = (finalResult) => {
     if (RiskModeselector === false) {
       if (finalResult == selectedCard) {
-
         dispatch(togglehowtoplay(false))
         dispatch(toggleMenu(false))
         let currentmultiplier
@@ -170,6 +169,7 @@ export default function HotlineDOMTailwind() {
     // choose random initial speed (for variety)
     speedRef.current = 55 + Math.random() * 40; // px per frame approx
     setResult(null);
+    dispatch(Setresult1state(null))
     setIsSpinning(true);
     rafRef.current = requestAnimationFrame(animate);
 

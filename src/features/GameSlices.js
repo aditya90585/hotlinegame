@@ -35,9 +35,10 @@ const initialState = {
 
   Riskmode:false,
   spinstate:false,
-  result1state:"",
-  result2state:"",
+  result1state:null,
+  result2state:null,
   selectedCard:"red",
+  gameHistoryarray:[],
 }
 
 export const GameSlices = createSlice({
@@ -224,12 +225,22 @@ export const GameSlices = createSlice({
     },
     SetselectedCard:(state,action)=>{
       state.selectedCard = action.payload
+    },
+    SetgameHistoryarray:(state,action)=>{
+      if(state.gameHistoryarray.length<=0){
+       state.gameHistoryarray = Array(1).fill(action.payload)
+       console.log(state.gameHistoryarray)
+      }
+      else{
+    console.log(state.gameHistoryarray)
+      }
+     
     }
 
   }
 })
 
 
-export const {Setresult1state,SetselectedCard,Setresult2state,SetfeeeBetsSelector,Setspinstate,SetRiskmode,SetGamesSelector,SetGameLimitsSelector, SetGamerulesSelector, SetBethistorySelector, toggleAutoGame, SetstopGamestate, SetroundLeft, Setautogamingstate, SetautorevealState, SetbetState, SetautoGameRound, toggleStartAutoGameSelector, selectAutoOne, SetselectAutoBoxes, togglehowtoplay, toggleSound, boxesSet, triggerFlip, toggleMenu, resetFlip, setNavcashout, changefixbettomin, clearCashoutNotification, setCashoutNotification, addfixBet, setMultiplier, setcashOutamount, cashOutbetamount, changeMines, fixBets, betAmt, cashOutAmt, togglemain, togglefooter, revealedFalse, revealedOne, revealAll, changebetValue, changebetFix } = GameSlices.actions
+export const {Setresult1state,SetgameHistoryarray,SetselectedCard,Setresult2state,SetfeeeBetsSelector,Setspinstate,SetRiskmode,SetGamesSelector,SetGameLimitsSelector, SetGamerulesSelector, SetBethistorySelector, toggleAutoGame, SetstopGamestate, SetroundLeft, Setautogamingstate, SetautorevealState, SetbetState, SetautoGameRound, toggleStartAutoGameSelector, selectAutoOne, SetselectAutoBoxes, togglehowtoplay, toggleSound, boxesSet, triggerFlip, toggleMenu, resetFlip, setNavcashout, changefixbettomin, clearCashoutNotification, setCashoutNotification, addfixBet, setMultiplier, setcashOutamount, cashOutbetamount, changeMines, fixBets, betAmt, cashOutAmt, togglemain, togglefooter, revealedFalse, revealedOne, revealAll, changebetValue, changebetFix } = GameSlices.actions
 
 export const GameReducers = GameSlices.reducer
